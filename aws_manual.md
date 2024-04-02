@@ -52,12 +52,24 @@
 1. Connect to the instance via SSH as described in step 9.
 2. Once connected, update the package index and install the necessary dependencies for Docker installation:
   ```shell
-  sudo apt update
-  sudo apt install apt-transport-https ca-certificates curl software-properties-common
+  1. sudo apt update
+  2. sudo apt install apt-transport-https ca-certificates curl software-properties-common
   ```
 3. Add the Docker GPG key to ensure package integrity:
+  ```shell
+  curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
+  ```
+4. Add the Docker repository to the system's APT sources:
+  ```shell
+  sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
+  ```
+5. Update the package index again to include the Docker packages from the newly added repository and install docker:
+  ```shell
+  1. sudo apt update
+  2. sudo apt install docker-ce
+  ```
+### 11. AirDAO (ex Ambrosus) OpenEthereum Setup Guide
 
-
-
-
+1. Next, follow the instructions in the following guide:
+> [AirDAO (ex Ambrosus) OpenEthereum Setup Guide](https://github.com/ambrosus/openethereum/blob/main/docs/AirDAO_OpenEthereum_Setup_Guide.md)
 
